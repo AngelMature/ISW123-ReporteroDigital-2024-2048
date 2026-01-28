@@ -8,25 +8,7 @@ namespace ReporteroDigital
     {
         public event Action<string> ArticuloGenerado;
 
-        public async Task GenerarArticuloAsync()
-        {
-            try
-            {
-                var textoTask = ObtenerTextoAsync();
-                var imagenTask = ObtenerImagenAsync();
-                var analisisTask = ObtenerAnalisisAsync();
-
-                await Task.WhenAll(textoTask, imagenTask, analisisTask);
-
-                string articulo =
-                    $"{textoTask.Result}\n{imagenTask.Result}\n{analisisTask.Result}";
-
-                ArticuloGenerado?.Invoke("Artículo generado exitosamente.");
-                Console.WriteLine(articulo);
-            }
-            catch (FuenteNoDisponibleException ex)
-            {
-                Console.WriteLine($"Advertencia: {ex.Message}");
+        
             }
         }
 
