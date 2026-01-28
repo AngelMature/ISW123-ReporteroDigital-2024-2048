@@ -14,14 +14,7 @@ namespace ReporteroDigital
 
             Reportero reportero = new Reportero();
 
-            reportero.ArticuloGenerado += mensaje =>
-            {
-                Console.WriteLine($"EVENTO: {mensaje}");
-            };
-
-            await reportero.GenerarArticuloAsync();
-
-            Console.WriteLine("Proceso finalizado.");
+           
         }
     }
 }
